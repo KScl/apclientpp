@@ -36,10 +36,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #endif
 
 #include <nlohmann/json.hpp>
+
+#ifdef APCLIENT_USE_BUNDLED_VALIJSON
+#include <valijson_nlohmann_bundled.hpp>
+#else
 #include <valijson/adapters/nlohmann_json_adapter.hpp>
 #include <valijson/schema.hpp>
 #include <valijson/schema_parser.hpp>
 #include <valijson/validator.hpp>
+#endif
+
 #include <chrono>
 #include <stdint.h>
 #include <inttypes.h>
